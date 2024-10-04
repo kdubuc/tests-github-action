@@ -22,9 +22,19 @@ jobs:
 
         - uses: actions/checkout@v4
 
+        - name: Set globals
+          id: globals
+          shell: bash
+          run: |
+            echo "HASH=${{ env.hash }}" >> "${GITHUB_OUTPUT}"
+            echo "BRANCH=${{ env.branch }}" >> "${GITHUB_OUTPUT}"
+
         - name: Hash
           run: echo ${{ env.hash }}
 
-        - name: Hash
+        - name: Branch
           run: echo ${{ env.branch }}
+            
+        - name: Globals
+          run: echo ${{ steps.globals.outputs.HASH }}
             
