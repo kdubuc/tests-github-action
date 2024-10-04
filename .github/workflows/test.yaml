@@ -1,0 +1,21 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - main
+
+env:
+    hash: $(git rev-parse --short=8 "$GITHUB_SHA")
+
+jobs:
+
+    build:
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+        - name: Checkout repository
+          run: echo ${{ env.hash }}
+            
