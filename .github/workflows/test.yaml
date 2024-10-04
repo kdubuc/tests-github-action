@@ -8,7 +8,7 @@ on:
 
 env:
     hash: $(git rev-parse --short=8 "$GITHUB_SHA")
-    branch: $(${GITHUB_REF_NAME/\//-})
+    branch: $(echo ${GITHUB_REF_NAME/\//-})
 
 jobs:
 
