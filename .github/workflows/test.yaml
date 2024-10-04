@@ -5,10 +5,10 @@ on:
         branches:
             - main
             - feature/*
-            
+
 env:
     hash: $(git rev-parse --short=8 "$GITHUB_SHA")
-    branch: ${GITHUB_REF_NAME/\//-}
+    branch: $(${GITHUB_REF_NAME/\//-})
 
 jobs:
 
